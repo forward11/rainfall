@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras import layers
 import pandas as pd
 import matplotlib.pyplot as plt
+tf.random.set_seed(1)
 
 
 def make_dataset():
@@ -104,15 +105,20 @@ def dense_model_functional():
 
 
 if __name__ == '__main__':
-    epochs = 20
+    epochs = 200
     size_train, size_val = 2091, 713
     batch_size = 32 #32
     train_ds, val_ds, test_x, test_y, train_mean, train_std = make_dataset()
     model = dense_model_sequential_1()
     # model = dense_model_sequential_2()
     # model = dense_model_functional()
+    callback = tf.keras.callbacks.EarlyStopping(
+        monitor='val_loss', min_delta=0, patience=10, verbose=0,
+        mode='auto', baseline=None, restore_best_weights=True
+    )
     history = model.fit(train_ds, epochs=epochs, steps_per_epoch=size_train // batch_size,
-                        validation_data=val_ds, validation_steps=size_val // batch_size)
+                        validation_data=val_ds, validation_steps=size_val // batch_size,
+                        callbacks=[callback])
     hist = pd.DataFrame(history.history)
     hist['epoch'] = history.epoch
     print(model.summary())
@@ -123,9 +129,12 @@ if __name__ == '__main__':
 
     model = tf.keras.models.load_model('model')
     pred_y = model.predict(test_x)
-
     pred_y = pred_y * train_std + train_mean
     test_y = test_y * train_std + train_mean
+
+    for index in range(len(pred_y)):
+        if pred_y[index]<0:
+            pred_y[index]=0
 
     # paint pred and real
     x = range(335)
@@ -151,4 +160,3 @@ if __name__ == '__main__':
 
     #result
     print((test_y.mean()-pred_y.mean())/pred_y.mean())
-    #answer is 0.4900211579427676
