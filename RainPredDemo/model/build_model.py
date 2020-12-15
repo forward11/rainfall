@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras import layers
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score
 tf.random.set_seed(1)
 
 
@@ -156,4 +157,18 @@ if __name__ == '__main__':
     plt.close()
 
     #result
-    print((test_y.mean()-pred_y.mean())/pred_y.mean())
+    print("all year increasing: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
+    test_half1 = test_y[:214]
+    test_half2 = test_y[214:]
+    pred_half1 = pred_y[:214]
+    pred_half2 = pred_y[214:]
+    print("202001-07 real rainfall: ",test_half1.sum())
+    print("202001-07 pred rainfall: ",pred_half1.sum())
+    print("real is bigger than pred by :",(test_half1.sum()-pred_half1.sum())/pred_half1.sum(),'\n')
+
+    print("202008-11 real rainfall: ",test_half2.sum())
+    print("202008-11 pred rainfall: ",pred_half2.sum())
+    print("real is bigger than pred by :",(test_half2.sum()-pred_half2.sum())/pred_half2.sum())
+
+    r_square = r2_score(y_true=test_y,y_pred=pred_y)
+    print("R-square is ",r_square)
