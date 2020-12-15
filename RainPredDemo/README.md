@@ -6,12 +6,12 @@
 5. 
 
 ## 实验结果
-201901-07 real rainfall:  452.8
-201901-07 pred rainfall:  482.03033
-real is bigger than pred by : -0.060640031098114146 
+201901-07 real rainfall:  452.8 
+201901-07 pred rainfall:  482.03033 
+real is bigger than pred by : -0.060640031098114146  
 
-201908-11 real rainfall:  491.1
-201908-11 pred rainfall:  364.05542
-real is bigger than pred by : 0.3489704400098983
+201908-11 real rainfall:  491.1 
+201908-11 pred rainfall:  364.05542 
+real is bigger than pred by : 0.3489704400098983 
 
 对后半段雨水量大的预测不出来，导致pred偏小
