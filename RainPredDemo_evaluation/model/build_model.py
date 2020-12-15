@@ -122,10 +122,10 @@ if __name__ == '__main__':
     hist = pd.DataFrame(history.history)
     hist['epoch'] = history.epoch
     print(model.summary())
-    if not os.path.exists('model'):
-        os.makedirs('model')
-    model.save('model')
-    model = tf.keras.models.load_model('model')
+    # if not os.path.exists('model'):
+    #     os.makedirs('model')
+    # model.save('model')
+    # model = tf.keras.models.load_model('model')
     pred_y = model.predict(test_x)
     pred_y = pred_y * train_std + train_mean
     test_y = test_y * train_std + train_mean
