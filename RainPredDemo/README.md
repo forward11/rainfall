@@ -6,12 +6,16 @@
 5. r_squre的引入，发现模型对2019年的预测结果极差，需要修改
 
 ## 实验结果
-* 201901-07 real rainfall:  452.8 
-* 201901-07 pred rainfall:  482.03033 
+* 202001-07 real rainfall:  452.8 
+* 202001-07 pred rainfall:  482.03033 
 * real is bigger than pred by : -0.060640031098114146  
-
-* 201908-11 real rainfall:  491.1 
-* 201908-11 pred rainfall:  364.05542 
+* 202008-11 real rainfall:  491.1 
+* 202008-1 pred rainfall:  364.05542 
 * real is bigger than pred by : 0.3489704400098983 
+
+* 2020年1-7月平均日雨量为2.126
+* 2020年8-11月平均日雨量为4.025
+* 2020年1-11月平均日雨量为2.8146
+
 
 对后半段雨水量大的预测不出来，导致pred偏小
