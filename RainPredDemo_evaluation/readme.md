@@ -1,0 +1,12 @@
+# 六盘山神经网络降雨评估
+1. 该程序是对RainPredDemo的模型评估，用来验证降雨量的增加中，模型的误差有多少
+2. train:2008-2016  val:2017-2018  test:2019
+   
+## 实验结果
+201901-07 real rainfall:  491.0
+201901-07 pred rainfall:  447.47375
+real is bigger than pred by : 0.09727105699994953 
+
+201908-11 real rainfall:  508.19999999999993
+201908-11 pred rainfall:  383.06128
+real is bigger than pred by : 0.3266806839177854
