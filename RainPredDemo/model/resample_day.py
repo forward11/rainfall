@@ -16,7 +16,7 @@ def resample_day(filename):
     df1['RH'] = df1['RH']//24
     df1['WD'] = df1['WD']//24
     df1['WV'] = df1['WV']/24
-    df1 =df.drop(df[df['P']<0.1].index)
+    df1 =df1.drop(df1[df1['P']<0.1].index)
     df1.to_csv((os.path.join(config['directory'], '{}_resample.csv').format(filename)),index='time')
 
 if __name__ == '__main__':

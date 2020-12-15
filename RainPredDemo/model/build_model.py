@@ -55,7 +55,7 @@ def dense_model_sequential_1():
     """
     model = tf.keras.Sequential()
     model.add(layers.Dense(7, activation='sigmoid'))
-    model.add(layers.Dense(35, activation='sigmoid'))
+    model.add(layers.Dense(25, activation='sigmoid'))
     model.add(layers.Dense(1))
 
     optimizer = tf.keras.optimizers.Adam(
@@ -122,18 +122,15 @@ if __name__ == '__main__':
     hist = pd.DataFrame(history.history)
     hist['epoch'] = history.epoch
     print(model.summary())
-
     if not os.path.exists('model'):
         os.makedirs('model')
     model.save('model')
-
     model = tf.keras.models.load_model('model')
     pred_y = model.predict(test_x)
     pred_y = pred_y * train_std + train_mean
     test_y = test_y * train_std + train_mean
-
     for index in range(len(pred_y)):
-        if pred_y[index]<0:
+         if pred_y[index]<0:
             pred_y[index]=0
 
     # paint pred and real
