@@ -22,6 +22,22 @@ def concat_data():
         temp_frame = pd.concat(temp_list)
         temp_frame.to_csv((os.path.join(path, '{}.csv').format(year_used_for)), index=False)
 
+def add_time(filename):
+    """
+    add datatime to train,val,test file 
+    :return: None
+    """
+    with open(os.path.join(os.path.dirname(__file__),'config.json'),'r') as json_file:
+        config = json.load(json_file)
+    df = pd.read_csv(os.path.join(config['directory'],'{}.csv').format(filename))
+    periods = pd.to_datetime(df[['year','month','day','hour']])
+    df = df.set_index(periods)
+    df.drop(labels=['year','month','day','hour'],axis=1, inplace=True)
+    #df = df.resample('H').sum()
+    df.to_csv((os.path.join(config['directory'], '{}.csv').format(filename)),index='time')
 
 if __name__ == '__main__':
     concat_data()
+    add_time('train')
+    add_time('val')
+    add_time('test')

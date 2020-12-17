@@ -1,7 +1,7 @@
 {
     "directory": "E:\\rainfall\\RainPredDemo\\data",
     "features_data": [
-      "RPH","year","month","day","hour","P", "T", "RH", "WV_X", "WV_Y"
+      "RPH","year","month","day","hour","P", "T", "RH", "WD", "WV"
     ],
     "features": [
       "RPH","month","day","P", "T", "RH",  "WV_X", "WV_Y"

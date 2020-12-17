@@ -18,9 +18,9 @@ def make_dataset():
         config = json.load(json_file)
 
     features = config['features']
-    train = reader.read_many('train_resample_MD', features)
-    val = reader.read_many('val_resample_MD', features)
-    test = reader.read_many('test_resample_MD', features)
+    train = reader.read_many('train_resample', features)
+    val = reader.read_many('val_resample', features)
+    test = reader.read_many('test_resample', features)
 
     train_mean = train.mean(axis=0)['RPH']
     train_std = train.std(axis=0)['RPH']
@@ -156,18 +156,18 @@ if __name__ == '__main__':
     plt.close()
 
     #result
-    print("all year increasing: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
-    test_half1 = test_y[:211]
-    test_half2 = test_y[211:]
-    pred_half1 = pred_y[:211]
-    pred_half2 = pred_y[211:]
-    print("201901-07 real rainfall: ",test_half1.sum())
-    print("201901-07 pred rainfall: ",pred_half1.sum())
-    print("real is bigger than pred by :",(test_half1.sum()-pred_half1.sum())/pred_half1.sum(),'\n')
+    print("real is bigger than pred by: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
+    test_half1 = test_y[:212]
+    test_half2 = test_y[212:]
+    pred_half1 = pred_y[:212]
+    pred_half2 = pred_y[212:]
+    print("201901-07 real rainfall: ",test_half1.mean())
+    print("201901-07 pred rainfall: ",pred_half1.mean())
+    print("real is bigger than pred by :",(test_half1.mean()-pred_half1.mean())/pred_half1.mean(),'\n')
 
-    print("201908-11 real rainfall: ",test_half2.sum())
-    print("201908-11 pred rainfall: ",pred_half2.sum())
-    print("real is bigger than pred by :",(test_half2.sum()-pred_half2.sum())/pred_half2.sum())
+    print("201908-11 real rainfall: ",test_half2.mean())
+    print("201908-11 pred rainfall: ",pred_half2.mean())
+    print("real is bigger than pred by :",(test_half2.mean()-pred_half2.mean())/pred_half2.mean())
 
     r_square = r2_score(y_true=test_y,y_pred=pred_y)
     print("R-square is ",r_square)
