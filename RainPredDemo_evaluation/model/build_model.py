@@ -54,7 +54,7 @@ def dense_model_sequential_1():
     :return: Model established
     """
     model = tf.keras.Sequential()
-    model.add(layers.Dense(7, activation='sigmoid'))
+    model.add(layers.Dense(6, activation='sigmoid'))
     model.add(layers.Dense(25, activation='sigmoid'))
     model.add(layers.Dense(1))
 
@@ -106,8 +106,9 @@ def dense_model_functional():
 
 if __name__ == '__main__':
     epochs = 200
-    size_train, size_val = 1726, 723
-    batch_size = 32 #32
+    #size_train, size_val = 1726, 723  #for every day
+    size_train, size_val = 57, 23    #for month
+    batch_size = 8 
     train_ds, val_ds, test_x, test_y, train_mean, train_std = make_dataset()
     model = dense_model_sequential_1()
     # model = dense_model_sequential_2()
@@ -134,7 +135,8 @@ if __name__ == '__main__':
             pred_y[index]=0
 
     # paint pred and real
-    x = range(355)
+    #x = range(355)  #for day
+    x = range(1,12)  #for month
     plt.plot(x, pred_y, label="pred", color="b")
     plt.plot(x, test_y, label="real", color="r")
     plt.legend()
@@ -158,18 +160,24 @@ if __name__ == '__main__':
     #result
     print("2019 real rainfall: ",test_y.mean())
     print("2019 pred rainfall: ",pred_y.mean())
-    print("real is bigger than pred by: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
-    test_half1 = test_y[:212]
-    test_half2 = test_y[212:]
-    pred_half1 = pred_y[:212]
-    pred_half2 = pred_y[212:]
+    print("real is bigger than pred by: ",(test_y.mean()-pred_y.mean())/pred_y.mean(),"\n")
+    # test_half1 = test_y[:212]
+    # test_half2 = test_y[212:]
+    # pred_half1 = pred_y[:212]
+    # pred_half2 = pred_y[212:]
+    test_half1 = test_y[:7]
+    test_half2 = test_y[7:]
+    pred_half1 = pred_y[:7]
+    pred_half2 = pred_y[7:]
     print("201901-07 real rainfall: ",test_half1.mean())
     print("201901-07 pred rainfall: ",pred_half1.mean())
     print("real is bigger than pred by :",(test_half1.mean()-pred_half1.mean())/pred_half1.mean(),'\n')
 
     print("201908-11 real rainfall: ",test_half2.mean())
     print("201908-11 pred rainfall: ",pred_half2.mean())
-    print("real is bigger than pred by :",(test_half2.mean()-pred_half2.mean())/pred_half2.mean())
+    print("real is bigger than pred by :",(test_half2.mean()-pred_half2.mean())/pred_half2.mean(),"\n")
 
+    print("every month real rain :", test_y)
+    print("every month pred rain :", pred_y)
     r_square = r2_score(y_true=test_y,y_pred=pred_y)
     print("R-square is ",r_square)
