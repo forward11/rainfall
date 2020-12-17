@@ -157,7 +157,9 @@ if __name__ == '__main__':
     plt.close()
 
     #result
-    print("all year increasing: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
+    print("2020 real rainfall: ",test_y.mean())
+    print("2020 pred rainfall: ",pred_y.mean())
+    print("real is bigger than pred by: ",(test_y.mean()-pred_y.mean())/pred_y.mean())
     test_half1 = test_y[:213]
     test_half2 = test_y[213:]
     pred_half1 = pred_y[:213]

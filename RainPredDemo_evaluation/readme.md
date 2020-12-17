@@ -3,7 +3,9 @@
 2. train:2008-2016  val:2017-2018  test:2019
  
 ## 实验结果
-1. * real is bigger than pred by:  0.3659110819331484
+1. * 2019 real rainfall:  2.814647887323944
+* 2019 pred rainfall:  2.0606377
+* real is bigger than pred by:  0.3659110819331484
 * 201901-07 real rainfall:  2.354716981132076
 * 201901-07 pred rainfall:  1.8125645
 * real is bigger than pred by : 0.29910797173386094 
