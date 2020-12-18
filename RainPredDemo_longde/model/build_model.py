@@ -109,7 +109,7 @@ if __name__ == '__main__':
     epochs = 200
     #size_train, size_val = 1726, 723  #for every day
     size_train, size_val = 57, 23    #for month
-    batch_size = 8  #32
+    batch_size = 4  #32
     train_ds, val_ds, test_x, test_y, train_mean, train_std = make_dataset()
     model = dense_model_sequential_1()
     # model = dense_model_sequential_2()
