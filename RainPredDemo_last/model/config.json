@@ -1,5 +1,5 @@
 {
-    "directory": "E:\\rainfall\\RainPredDemo_LdJy\\data",
+    "directory": "E:\\rainfall\\RainPredDemo_last\\data",
     "features_data": [
       "RPH","year","month","day","hour"
     ],
@@ -16,15 +16,14 @@
         2013,
         2014,
         2015,
-        2016,
-        2017
+        2016
       ],
       "val": [
-        2018,
-        2019
+        2017,
+        2018
       ],
       "test": [
-        2020
+        2019
       ]
     }
   }

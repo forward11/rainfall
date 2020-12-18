@@ -10,8 +10,8 @@ def resample_month(filename):
     df=df.rename(columns={'Unnamed: 0':'time'})
     df.set_index('time', inplace=True)
     df = df.set_index(pd.DatetimeIndex(pd.to_datetime(df.index)))
-    if filename=='train':
-        df=df[:-2]
+    # if filename=='train':
+    #     df=df[:-2]
     df1 = df.resample('M').sum()
     df1['P'] = df1['P']/(24*30)
     df1['T'] = df1['T']/(24*30)
@@ -21,6 +21,7 @@ def resample_month(filename):
     df1 =df1.drop(df1[df1['P']<0.1].index)
     if filename!='train':
         df1=df1[:-1]    #12月不足30天
+    df1 =df1.drop(df1[df1['P']<600].index)
     df1.to_csv((os.path.join(config['directory'], '{}_resample.csv').format(filename)),index='time')
 
 def DateSplit(df):
