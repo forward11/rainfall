@@ -1,11 +1,10 @@
 {
-    "directory_lps": "E:\\rainfall\\RainPredDemo_longde\\data_lps",
-    "directory": "E:\\rainfall\\RainPredDemo_longde\\data_longde",
+    "directory": "E:\\rainfall\\RainPredDemo_longde\\data",
     "features_data": [
       "RPH","year","month","day","hour"
     ],
     "features": [
-      "RPH","month","day","P", "T", "RH",  "WV_X", "WV_Y"
+      "RPH","month","day","P", "T", "RH",  "WV_X", "WV_Y", "RPH_ld"
     ],
     "years": {
       "train": [

@@ -51,6 +51,21 @@ def delete_month(filename):
     df.to_csv((os.path.join(config['directory'], '{}.csv').format(filename)),index=False)
 
 
+def add_lps(filename):
+    """
+    merge lps and LongDe
+    :return: None
+    """
+    with open(os.path.join(os.path.dirname(__file__),'config.json'),'r') as json_file:
+            config = json.load(json_file)
+    df_ld = pd.read_csv(os.path.join(config['directory'],'{}_resample.csv').format(filename))
+    df_lps = pd.read_csv(os.path.join(config['directory'],'{}_lps.csv').format(filename))
+    df_lps['RPH_ld'] = df_ld['RPH']
+    df_lps.drop(['Unnamed: 0'], axis=1, inplace=True)
+    df_lps.to_csv((os.path.join(config['directory'], '{}_resample.csv').format(filename)),index=False)
+
+
+
 if __name__ == '__main__':
     resample_month('train')
     resample_month('val')
@@ -61,4 +76,6 @@ if __name__ == '__main__':
     delete_month('train_resample')
     delete_month('val_resample')
     delete_month('test_resample')
-
+    add_lps('train')
+    add_lps('val')
+    add_lps('test')

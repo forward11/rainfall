@@ -20,7 +20,7 @@ def resample_month(filename):
     df1['WV'] = df1['WV']/(24*30)
     df1 =df1.drop(df1[df1['P']<0.1].index)
     if filename!='train':
-        df1=df1[:-1]
+        df1=df1[:-1]    #12月不足30天
     df1.to_csv((os.path.join(config['directory'], '{}_resample.csv').format(filename)),index='time')
 
 def DateSplit(df):
