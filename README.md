@@ -6,3 +6,4 @@
 5. [RainPredDemo_last](RainPredDemo_last): 对2020年使用了修正模型
 6. [RainForDay_evaluation](RainForDay_evaluation): 使用2019年检验了日雨量模型
 7. [RainForDay](RainForDay): 对2020年完成日雨量分析
+8. [T-test](T-test): 对降雨数据进行T-test
