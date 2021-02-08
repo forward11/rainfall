@@ -14,5 +14,5 @@ def get_all_files(directory):
 
 
 if __name__ == '__main__':
-    wsl_path = "E:\\rainfall\\Location-based analysis\\RainMap\\data"
+    wsl_path = "E:\\rainfall\\Location_based_analysis\\RainMap\\data"
     files = get_all_files(wsl_path)
