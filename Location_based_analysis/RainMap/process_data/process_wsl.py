@@ -15,4 +15,4 @@ for file in files[0:8]:
     rain_count = temp.groupby(['Date'])['rain_day'].count()
     result[lambda df: df.columns[files.index(file)]] = rain_sum / rain_count * 1440
 
-result.to_csv('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\RainGauge_lps.csv')
+result.to_csv('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\RainGauge_wsl.csv')
