@@ -3,7 +3,7 @@ from file_reader import get_all_files
 
 lps_path = "E:\\rainfall\\Location_based_analysis\\RainMap\\data\\lps"
 files = get_all_files(lps_path)
-date = pd.date_range('2020-08-01', '2020-10-30')
+date = pd.date_range('2020-08-01', '2020-11-30')
 columns = ['R0002', 'R0003', 'R0004', 'R0005', 'R0006', 'R0007', 'R0008']
 result = pd.DataFrame(index=date, columns=columns)
 
