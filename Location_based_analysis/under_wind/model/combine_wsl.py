@@ -2,7 +2,7 @@ import cv2
 from file_reader import get_all_files
 
 # 加载图像
-wind_imgs = get_all_files("E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_wind_1")
+wind_imgs = get_all_files("E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_wind")
 rain_imgs = get_all_files("E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_sub_base")
 for i in range(len(wind_imgs)):
     rain_img = cv2.imread(rain_imgs[i])
