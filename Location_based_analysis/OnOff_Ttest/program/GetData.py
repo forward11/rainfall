@@ -1,10 +1,10 @@
 import pandas as pd 
 import os
 
-directories =['R0001','R0002','R0003','R0004','R0005','R0006','R0007','R0008']
+directories =['RG001','RG002','RG003','RG004','RG005','RG006','RG007','RG008']
 
 for directory in directories:
-    dir = "C:\\Users\\11016\\Desktop\\output_data\\wsl_19\\" + directory
+    dir = "C:\\Users\\11016\\Desktop\\output_data\\lps\\" + directory
     filenames = os.listdir(dir)
     index = 0
     temp_df =[]
@@ -19,4 +19,4 @@ for directory in directories:
         temp_df.append(df)
         index = index +1 
     df=pd.concat(temp_df)
-    df.to_excel(os.path.join("C:\\Users\\11016\\Desktop\\output_data\\wsl_19", '{}.xlsx').format(directory))
+    df.to_excel(os.path.join("C:\\Users\\11016\\Desktop\\output_data\\lps\\new", '{}.xlsx').format(directory))
