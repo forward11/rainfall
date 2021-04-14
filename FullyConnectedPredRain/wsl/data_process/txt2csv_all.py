@@ -15,7 +15,7 @@ for month in months:
     data = pd.DataFrame(txt)
     data.columns = ['stationID','lon','lat','altitude','siteLevel','totalCloud','WD','WV','airPressure','Transformation_3h',
     'pastWeather1','pastWeather2','rainfall_6h','lowCloudiness','lowCloudCover','lowCloudHigh','dewPoint','visibility','currentWeather','temperature',
-    'lowCloudiness','highCloudiness','flag1','flag2','temperatureChange_24h','transformer_24h']
+    'midCloudiness','highCloudiness','flag1','flag2','temperatureChange_24h','transformer_24h']
     time = pd.read_csv(os.path.join(path,'Date.csv'))
     time = time.rename(columns={'Unnamed: 0':'time'})
     data[['time','year','month','day','hour']]=time[['time','year','month','day','hour']]
