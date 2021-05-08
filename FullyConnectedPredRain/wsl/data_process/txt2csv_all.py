@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import os
 
-year= '2020'
-months = ['01','02','03','04','05','06','07','08','09','10','11','12']
+year= '2019'
+months = ['01','02','04','05','06','07','08','09','10','11','12']
 
 for month in months:
     date_now = year + month
