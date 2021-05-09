@@ -1,0 +1,12 @@
+{
+    "directory": "E:\\rainfall\\FullyConnectedPredRain\\wsl\\data\\concat",
+    "features": [
+      "rainfall","month","day","totalCloud","Transformation_3h","dewPoint","visibility","temperature",
+      "temperatureChange_24h","transformer_24h","rainfall_ww","rainfall_yc","WV_x","WV_y" 
+    ],
+    "years": [
+        "train",
+        "val",
+        "test"
+        ]
+}
