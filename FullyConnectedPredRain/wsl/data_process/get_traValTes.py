@@ -12,4 +12,4 @@ for place in places:
             df = pd.read_csv(os.path.join(path,file))
             df_temp.append(df)
         df_final = pd.concat(df_temp)
-        df_final.to_csv("E:\\rainfall\\FullyConnectedPredRain\\wsl\\data\\"+ place + "\\"+dir+".csv")
+        df_final.to_csv("E:\\rainfall\\FullyConnectedPredRain\\wsl\\data\\"+ place + "\\"+dir+"_"+place+".csv",index=False)
