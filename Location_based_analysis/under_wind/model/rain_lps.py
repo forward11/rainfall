@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from set_plt import config_lps
 
 #encoding="ISO-8859-1"
-data=pd.read_csv(r"E:\rainfall\Location_based_analysis\under_wind\lps_rain_process.csv",index_col=0,encoding="ISO-8859-1")
+data=pd.read_csv(r"E:\rainfall\Location_based_analysis\under_wind\lps_sub_base.csv",index_col=0,encoding="ISO-8859-1")
 info = pd.read_excel(r"E:\rainfall\Location_based_analysis\under_wind\data\lps\StationInfo_lps.xlsx")
 station, lon, lat = info['台站号'], info['经度'], info['纬度']
 wv5_x,wv5_y = data['WV5_x'],data['WV5_y']
@@ -52,5 +52,5 @@ for i in range(len(data)):
     plt.legend(loc=2, markerscale=0.3,fontsize=15)
 
     index = data[i:i + 1].index.values.tolist()[0]
-    plt.savefig('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\lps_rain_process\\' + index + '.png', dpi=150)
+    plt.savefig('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\lps_sub_base\\' + index + '.png', dpi=150)
     plt.close()

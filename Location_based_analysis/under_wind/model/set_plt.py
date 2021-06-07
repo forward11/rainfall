@@ -23,8 +23,8 @@ font5 = {'weight': 'normal',
 def config_lps(plt):
     plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
     # plt.title('降雨量分布图', font5)
-    plt.ylabel('纬度', fontdict=font_label)
-    plt.xlabel('经度', fontdict=font_label)
+    plt.ylabel('Latitude', fontdict=font_label)
+    plt.xlabel('Longitude', fontdict=font_label)
     plt.ylim(35.50, 35.95)
     plt.xlim(106.08, 106.30)
     # x_ticks = [106.10 + 0.02*i for i in range(8)]
@@ -38,8 +38,8 @@ def config_lps(plt):
 def config_wsl(plt):
     plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
     # plt.title('降雨量分布图', font5)
-    plt.ylabel('纬度', fontdict=font_label)
-    plt.xlabel('经度', fontdict=font_label)
+    plt.ylabel('Latitude', fontdict=font_label)
+    plt.xlabel('Longitude', fontdict=font_label)
     plt.ylim(37.15, 37.24)
     plt.xlim(102.87, 102.94)
     # x_ticks = [106.10 + 0.02*i for i in range(8)]
