@@ -1,9 +1,10 @@
 import cv2
+import numpy as np
 from file_reader import get_all_files
 
 # 加载图像
-wind_imgs = get_all_files("E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_wind")
-rain_imgs = get_all_files("E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_sub_base")
+wind_imgs = get_all_files('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_wind')
+rain_imgs = get_all_files('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl')
 for i in range(len(wind_imgs)):
     rain_img = cv2.imread(rain_imgs[i])
     wind_img = cv2.imread(wind_imgs[i])
@@ -14,4 +15,4 @@ for i in range(len(wind_imgs)):
     dst = cv2.addWeighted(wind_img, 0.8, roi, 0.2, 0)
     add_img = rain_img.copy()
     add_img[1000:1000+rows, -cols-300:-300] = dst
-    cv2.imwrite('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_sub_base&wind\\'+rain_imgs[i].split('\\')[-1], add_img)
+    cv2.imwrite('E:\\rainfall\\Location_based_analysis\\under_wind\\plot\\wsl_rain&wind\\'+rain_imgs[i].split('\\')[-1], add_img)

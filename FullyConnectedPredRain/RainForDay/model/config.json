@@ -1,5 +1,5 @@
 {
-    "directory": "E:\\rainfall\\RainForDay\\data",
+    "directory": "E:\\rainfall\\FullyConnectedPredRain\\RainForDay\\data",
     "features": [
       "RPH","month","day","P", "T", "RH",  "WV_X", "WV_Y", "RPH_ld", "RPH_jy"
     ],

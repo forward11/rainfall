@@ -4,7 +4,7 @@ import os
 directories =['WG005','WG006','WG007']
 
 for directory in directories:
-    dir = "C:\\Users\\11016\\Desktop\\data\\lps\\"+directory
+    dir = "C:\\Users\\11016\\Desktop\\lps_7\\"+directory
     filenames = os.listdir(dir)
     index = 0
     temp_df =[]
@@ -19,4 +19,4 @@ for directory in directories:
         temp_df.append(df)
         index = index +1 
     df=pd.concat(temp_df)
-    df.to_excel(os.path.join("C:\\Users\\11016\\Desktop\\data\\lps", '{}.xlsx').format(directory))
+    df.to_excel(os.path.join("C:\\Users\\11016\\Desktop\\lps_7", '{}.xlsx').format(directory))

@@ -48,5 +48,5 @@ for i in range(len(data)):
     
     ax.bar(wd, wv, normed=True, opening=0.8, edgecolor='white')
     ax.set_legend()
-    plt.savefig('E:\\rainfall\\Location_based_analysis\\RainMap\\plot\\lps\\wind\\' + index + '.png')
+    plt.savefig('E:\\rainfall\\Location_based_analysis\\RainMap\\plot\\lps\\wind\\' + index + '.png',dpi=300)
     plt.close()

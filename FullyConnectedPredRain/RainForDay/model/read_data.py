@@ -35,7 +35,7 @@ class Reader:
                 config = json.load(json_file)
                 self.csvpath = config['directory']
         if not os.path.exists(self.csvpath):
-            raise ValueError('Path {} doesn\'t exit')
+            raise ValueError('Path {} doesn\'t exit'.format(self.csvpath))
 
     def read_one(self, csv_name=None, tag=None):
         """
