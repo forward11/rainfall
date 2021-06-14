@@ -5,7 +5,7 @@ from set_plt import config_lps
 
 rain = pd.read_csv('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\lps\\lps_last.csv', index_col=0)  
 info = pd.read_excel('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\lps\\StationInfo.xlsx')
-wind = pd.read_excel('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\lps\\WG006.xlsx', index_col=0)
+wind = pd.read_excel('E:\\rainfall\\Location_based_analysis\\RainMap\\data\\lps\\WG006_7_10.xlsx', index_col=0)
 data = rain.copy(deep=False)
 data = data[:] * 5
 info = info[:].reset_index()
